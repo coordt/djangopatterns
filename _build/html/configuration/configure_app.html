@@ -1,0 +1,130 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>You want to configure your app without modifying its code &mdash; Django Patterns</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Django Patterns" href="../index.html" />
+    <link rel="up" title="Configuration Patterns" href="index.html" />
+    <link rel="next" title="Model Patterns" href="../models/index.html" />
+    <link rel="prev" title="Autodiscovery" href="autodiscovery.html" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>Django Patterns</p>
+</div>
+<div id="header">
+	<div id="title"><h1>You want to configure your app without modifying its code</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="../models/index.html" title="Model Patterns" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="autodiscovery.html" title="Autodiscovery" accesskey="P">previous</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul class="current">
+<li class="toctree-l1 cn" id="1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1 cn" id="2"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1 current cn" id="3"><a class="reference internal" href="index.html">Configuration Patterns</a><ul class="current">
+<li class="toctree-l2 cn" id="4"><a class="reference internal" href="autodiscovery.html">Autodiscovery</a></li>
+<li class="toctree-l2 current cn" id="5"><a class="current reference internal" href="">You want to configure your app without modifying its code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 cn" id="6"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
+<li class="toctree-l1 cn" id="7"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
+<li class="toctree-l1 cn" id="8"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
+<li class="toctree-l1 cn" id="9"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
+<li class="toctree-l1 cn" id="10"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+</ul>
+
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="you-want-to-configure-your-app-without-modifying-its-code">
+<h1>You want to configure your app without modifying its code<a class="headerlink" href="#you-want-to-configure-your-app-without-modifying-its-code" title="Permalink to this headline">¶</a></h1>
+<p class="cn" id="1">Django debug tool bar uses one dictionary to store all its configurations.</p>
+<p class="cn" id="2">It creates a standard set of configurations</p>
+<p class="cn" id="3">And then updates them with which ever options are overridden in the project’s settings.py</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+
+<span class="n">TOOLBAR_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;INTERCEPT_REDIRECTS&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="s">&#39;SHOW_TOOLBAR_CALLBACK&#39;</span><span class="p">:</span> <span class="n">default_show_toolbar</span><span class="p">,</span>
+    <span class="s">&#39;EXTRA_SIGNALS&#39;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s">&#39;HIDE_DJANGO_SQL&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="s">&#39;SHOW_TEMPLATE_CONTEXT&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="s">&#39;TAG&#39;</span><span class="p">:</span> <span class="s">&#39;body&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">TOOLBAR_CONFIG</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="s">&#39;DEBUG_TOOLBAR_CONFIG&#39;</span><span class="p">,</span> <span class="p">{}))</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2011, Corey Oordt.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		<a href="index.html" accesskey="U">Configuration Patterns</a><img src="../_static/triangle_closed.png" height="9" width="9" alt="&gt;">
+		You want to configure your app without modifying its code
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  </body>
+</html>
