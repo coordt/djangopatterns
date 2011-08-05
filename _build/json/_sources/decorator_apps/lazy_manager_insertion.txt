@@ -2,6 +2,9 @@
 Lazy Manager Insertion
 ======================
 
+.. warning::
+   This is just a stub document. It will be fleshed out more. Please don't comment on it.
+
 Loosely based on Django-mptt. It is very similar to how we handled inserting a field.
 ::
 

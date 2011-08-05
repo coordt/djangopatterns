@@ -47,24 +47,49 @@ Life moves very fast on the internet. Projects must adapt quickly or fail misera
 Key Design Principles
 =====================
 
-#. Break down the tools to their simplest bits.
+Design the user's experience first
+**********************************
 
-#. Separate functionality whenever possible.
+Many developers create solutions that are functional, but not usable. When you start with the user's experience, you at least get more usable solutions, if not better ones.
 
-#. Be flexible in implementation.
+Break down the tools to their simplest bits.
+********************************************
 
-#. Couple loosely.
+It is easier to find new uses for simple tools than complex tools. I am constantly surprised how people have found new ways to use code that was meant for something else.
 
-#. Code is like a making a baby: only do it if you are willing to support it for the rest of your life.
+Similar ideas are:
 
-#. External dependencies should be declared and be few: like farts in an elevator.
+* Separate functionality whenever possible.
 
-#. If you want people to do something, make it incredibly easy to do.
+* Be flexible in implementation.
 
-#. If you want people to do something a specific way, make it easier to do it that way than any other.
+* Couple loosely.
 
-#. The user's experience is the most important part, and should be designed first.
+Code is like a making a baby: only do it if you are willing to support it for the rest of your life.
+****************************************************************************************************
 
-#. Make it easy to divide up work without stepping on toes.
+I've learned the hard way that code you wrote years ago can come back to haunt you. I've received calls from people I wrote code for years before asking for help due to an unforeseen bug. (To me the unforeseen bug was that they were still using the software.) Unless you are willing to be a jerk, you got to give them a hand.
 
-#. When making a utility to enhance functionality, don't assume that the implementer will "own the code".
+This leads to two practices: use external code libraries whenever possible to reduce the amount of code for which you are directly responsible, and write your code in a way that you won't be too horrified to see it in three years.
+
+A similar practice is when making a utility to enhance functionality, don't assume that the implementer will "own the code".
+
+External dependencies should be declared and few
+************************************************
+
+I see dependencies like farts on an elevator: the fewer the better (and please confess).
+
+If you want people to do something, make it incredibly easy to do.
+******************************************************************
+
+And don't forget its sibling: *If you want people to do something a specific way, make it easier to do it that way than any other.*
+
+Even small barriers will limit how often "best practices" are followed. People put off things if:
+
+* They have to do prep work to accomplish the task
+
+* They aren't sure how to accomplish the task
+
+* They don't understand why the task is important
+
+

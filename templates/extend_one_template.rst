@@ -2,6 +2,9 @@
 Extend one template
 ===================
 
+.. warning::
+   This is just a stub document. It will be fleshed out more. Please don't comment on it.
+
 If all your templates extend a template that you assume exists, such as “base.html” *** You have to change each template when your project uses “site_base.html” instead.
 
 If instead all your templates extend a known, base template in your name space and it extends the mythical “base.html” *** when the inevitable happens and the base template name changes *** changing one template makes all the others work.

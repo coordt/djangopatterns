@@ -21,9 +21,6 @@ Sources
 Useful Links
 ============
 
-Code Examples
-=============
-
 Where is it used?
 =================
 

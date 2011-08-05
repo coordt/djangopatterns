@@ -2,6 +2,8 @@
 You want to configure your app without modifying its code
 =========================================================
 
+.. warning::
+   This is just a stub document. It will be fleshed out more. Please don't comment on it.
 
 Django debug tool bar uses one dictionary to store all its configurations.
 

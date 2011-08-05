@@ -6,4 +6,5 @@ Application Construction
    :maxdepth: 2
    :glob:
    
-   version_tracking
+   version_reporting
+   views_as_a_package
