@@ -3,7 +3,7 @@ from sphinx.writers.html import HTMLWriter, HTMLTranslator, \
      SmartyPantsHTMLTranslator
 
 
-class HTMLIdTranslator(HTMLTranslator):
+class HTMLIdTranslator(SmartyPantsHTMLTranslator):
     """An HTML translator that includes incremented ids and anchors"""
     id_counter = 0
     # def __init__(self, builder, *args, **kwargs):
