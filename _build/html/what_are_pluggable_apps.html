@@ -45,14 +45,14 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1 current cn" id="1"><a class="current reference internal" href="">What are pluggable apps?</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="development_philosophy.html">My Development Assumptions and Principles</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 cn" id="4"><a class="reference internal" href="models/index.html">Model Patterns</a></li>
-<li class="toctree-l1 cn" id="5"><a class="reference internal" href="templates/index.html">Template Patterns</a></li>
-<li class="toctree-l1 cn" id="6"><a class="reference internal" href="urls/index.html">URL patterns</a></li>
-<li class="toctree-l1 cn" id="7"><a class="reference internal" href="decorator_apps/index.html">Decorator App Patterns</a></li>
-<li class="toctree-l1 cn" id="8"><a class="reference internal" href="app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">What are pluggable apps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorator_apps/index.html">Decorator App Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/index.html">Model Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="templates/index.html">Template Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urls/index.html">URL patterns</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -84,16 +84,20 @@
             
   <div class="section" id="what-are-pluggable-apps">
 <h1>What are pluggable apps?<a class="headerlink" href="#what-are-pluggable-apps" title="Permalink to this headline">¶</a></h1>
-<p class="cn" id="1">Confusion between the &quot;web app&quot; the user sees and the Django apps that power it.</p>
-<p class="cn" id="2">Pluggable apps are:</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<a name="7ee1116ab01c75c05d1f06e5aead905c9db78ad1"></a><p class="last cn" id="7ee1116ab01c75c05d1f06e5aead905c9db78ad1">This is just a stub document. It will be fleshed out more. Please don&#8217;t comment on it.</p>
+</div>
+<a name="99fe95058cb8b964383f764044366af11f6bc91b"></a><p class="cn" id="99fe95058cb8b964383f764044366af11f6bc91b">Confusion between the &#8220;web app&#8221; the user sees and the Django apps that power it.</p>
+<a name="15c62364c9a92b1df18327f4df7834d1e5a754bb"></a><p class="cn" id="15c62364c9a92b1df18327f4df7834d1e5a754bb">Pluggable apps are:</p>
 <ul class="simple">
-<li class="cn" id="3"><p class="first cn" id="4">Focused: focused use cases and include nothing that isn’t required. &quot;Write programs that do one thing and do it well.&quot; — Doug McIlroy (inventor of UNIX pipes)&quot;</p>
+<li><a name="d78e89b8a09ab38d1a9a9b955eeccadc317cb138"></a><p class="first cn" id="d78e89b8a09ab38d1a9a9b955eeccadc317cb138">Focused: focused use cases and include nothing that isn’t required. &#8220;Write programs that do one thing and do it well.&#8221; — Doug McIlroy (inventor of UNIX pipes)&#8221;</p>
 </li>
-<li class="cn" id="5"><p class="first cn" id="6">Self-contained: Everything someone needs to get the app working is declared or included.</p>
+<li><a name="d879490b07197a22c11a0cc7df44c5f38a8d01b5"></a><p class="first cn" id="d879490b07197a22c11a0cc7df44c5f38a8d01b5">Self-contained: Everything someone needs to get the app working is declared or included.</p>
 </li>
-<li class="cn" id="7"><p class="first cn" id="8">Easily adaptable: A focused application can inevitably find new uses, if it doesn’t take too much for granted or make too many assumptions.</p>
+<li><a name="492c3437985b5f09206c15f7922ed8489581bc58"></a><p class="first cn" id="492c3437985b5f09206c15f7922ed8489581bc58">Easily adaptable: A focused application can inevitably find new uses, if it doesn’t take too much for granted or make too many assumptions.</p>
 </li>
-<li class="cn" id="9"><p class="first cn" id="10">Easily installed: Pluggable applications are installed and not modified. Applications are wired together and configured in the project. The only “Apps” in your project codebase are apps that are so specific to the project that they can’t be used elsewhere.</p>
+<li><a name="b8600db6f01ece1718fbd3392329b6ecee8e93bd"></a><p class="first cn" id="b8600db6f01ece1718fbd3392329b6ecee8e93bd">Easily installed: Pluggable applications are installed and not modified. Applications are wired together and configured in the project. The only “Apps” in your project codebase are apps that are so specific to the project that they can’t be used elsewhere.</p>
 </li>
 </ul>
 </div>

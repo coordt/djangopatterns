@@ -23,7 +23,6 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Django Patterns" href="../index.html" />
     <link rel="up" title="URL patterns" href="index.html" />
-    <link rel="next" title="Decorator App Patterns" href="../decorator_apps/index.html" />
     <link rel="prev" title="URL patterns" href="index.html" /> 
   </head>
   <body>
@@ -36,7 +35,6 @@
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
-			<div class="headerButton"><a href="../decorator_apps/index.html" title="Decorator App Patterns" accesskey="N">next</a></div>
 			<div class="headerButton"><a href="index.html" title="URL patterns" accesskey="P">previous</a></div>
 		</li>
 	</ul>
@@ -46,17 +44,17 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 cn" id="4"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
-<li class="toctree-l1 cn" id="5"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
-<li class="toctree-l1 current cn" id="6"><a class="reference internal" href="index.html">URL patterns</a><ul class="current">
-<li class="toctree-l2 current cn" id="7"><a class="current reference internal" href="">URLs that live under any prefix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">URL patterns</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">URLs that live under any prefix</a></li>
 </ul>
 </li>
-<li class="toctree-l1 cn" id="8"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
-<li class="toctree-l1 cn" id="9"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -88,9 +86,13 @@
             
   <div class="section" id="urls-that-live-under-any-prefix">
 <h1>URLs that live under any prefix<a class="headerlink" href="#urls-that-live-under-any-prefix" title="Permalink to this headline">¶</a></h1>
-<p class="cn" id="1">It’s bad practice to hard code url paths or assume certain paths, for example that my blog app is always going to be under the path /blogs/</p>
-<p class="cn" id="2">Django provides an easy way to abstractly reference a url and its view. All you have to do ...</p>
-<p class="cn" id="3">Is add a <strong>* url function in front of the pattern *</strong> and add a name parameter. This allows you to ...</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<a name="3df84e40767c5c5b5d59c9636ce8de1ac9077761"></a><p class="last cn" id="3df84e40767c5c5b5d59c9636ce8de1ac9077761">This is just a stub document. It will be fleshed out more. Please don&#8217;t comment on it.</p>
+</div>
+<a name="f3703339f29e09c38447bd048ef32d272bf799a0"></a><p class="cn" id="f3703339f29e09c38447bd048ef32d272bf799a0">It’s bad practice to hard code url paths or assume certain paths, for example that my blog app is always going to be under the path /blogs/</p>
+<a name="f2bbba258dcb9be223f215d830460cc85e19e436"></a><p class="cn" id="f2bbba258dcb9be223f215d830460cc85e19e436">Django provides an easy way to abstractly reference a url and its view. All you have to do ...</p>
+<a name="76712873037e0157e399bc9daf69525a18dbcc90"></a><p class="cn" id="76712873037e0157e399bc9daf69525a18dbcc90">Is add a <strong>* url function in front of the pattern *</strong> and add a name parameter. This allows you to ...</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.conf.urls.defaults</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
@@ -100,7 +102,7 @@
 </div>
 <div class="highlight-python"><pre>&lt;p&gt;Go to the &lt;a href="{% url coolapp_index %}"&gt;Index&lt;/a&gt;&lt;/p&gt;</pre>
 </div>
-<p class="cn" id="4">Retrieve the url using the url template tag <a href="#id1"><span class="problematic" id="id2">**</span></a>* or use the reverse function within your code.</p>
+<a name="3e0b4dd6ae739a1a212b636e6aa238faebaee58b"></a><p class="cn" id="3e0b4dd6ae739a1a212b636e6aa238faebaee58b">Retrieve the url using the url template tag <a href="#id1"><span class="problematic" id="id2">**</span></a>* or use the reverse function within your code.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
 </pre></div>
 </div>

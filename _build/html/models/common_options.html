@@ -46,20 +46,20 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 current cn" id="4"><a class="reference internal" href="index.html">Model Patterns</a><ul class="current">
-<li class="toctree-l2 cn" id="5"><a class="reference internal" href="abstract_model_mixins.html">Abstract Model Mixins</a></li>
-<li class="toctree-l2 current cn" id="6"><a class="current reference internal" href="">Configurable Options for Common Situations</a></li>
-<li class="toctree-l2 cn" id="7"><a class="reference internal" href="configurable_relations.html">Configurable Foreign Keys</a></li>
-<li class="toctree-l2 cn" id="8"><a class="reference internal" href="flexible_storage_uploaded_files.html">Flexible storage of uploaded files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Model Patterns</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="abstract_model_mixins.html">Abstract Model Mixins</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Configurable Options for Common Situations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configurable_relations.html">Configurable Foreign Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flexible_storage_uploaded_files.html">Flexible storage of uploaded files</a></li>
 </ul>
 </li>
-<li class="toctree-l1 cn" id="9"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
-<li class="toctree-l1 cn" id="10"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
-<li class="toctree-l1 cn" id="11"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
-<li class="toctree-l1 cn" id="12"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -91,9 +91,13 @@
             
   <div class="section" id="configurable-options-for-common-situations">
 <h1>Configurable Options for Common Situations<a class="headerlink" href="#configurable-options-for-common-situations" title="Permalink to this headline">¶</a></h1>
-<p class="cn" id="1">A few, well-known of variations
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<a name="6e80cadfaf4055ef84084f49dd09a3880c4d7bd8"></a><p class="last cn" id="6e80cadfaf4055ef84084f49dd09a3880c4d7bd8">This is just a stub document. It will be fleshed out more. Please don&#8217;t comment on it.</p>
+</div>
+<a name="b9ab5e9069735c17ddbaa2bc31b887f997e2681f"></a><p class="cn" id="b9ab5e9069735c17ddbaa2bc31b887f997e2681f">A few, well-known of variations
 (e.g. Use django.contrib.sites?)</p>
-<dl class="docutils cn" id="2">
+<dl class="docutils">
 <dt><strong>models.py</strong></dt>
 <dd><div class="first last highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -126,8 +130,8 @@
 </td></tr></table></div>
 </dd>
 </dl>
-<p class="cn" id="3">Another example:</p>
-<dl class="docutils cn" id="4">
+<a name="58b3962332ece42b9853785fcec8ec90f68c4d58"></a><p class="cn" id="58b3962332ece42b9853785fcec8ec90f68c4d58">Another example:</p>
+<dl class="docutils">
 <dt><strong>models.py</strong></dt>
 <dd><div class="first last highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -156,11 +160,11 @@
 </td></tr></table></div>
 </dd>
 </dl>
-<p class="cn" id="5">You can provide for optional field settings.</p>
-<p class="cn" id="6">Import the setting from your own apps settings</p>
-<p class="cn" id="7">Based on that setting, you can optionally import classes. And in your model definition...</p>
-<p class="cn" id="8">Optionally declare fields. The only drawback of this depends on the type of field. Changing your mind after the initial table creation might require you to either manually add the field or drop the table and syncdb again.</p>
-<p class="cn" id="9">Link to way to do migration with south if field is added.</p>
+<a name="2d4c7324c1f9908d842f27e161bd44f0ead84049"></a><p class="cn" id="2d4c7324c1f9908d842f27e161bd44f0ead84049">You can provide for optional field settings.</p>
+<a name="3e48cff130ee5f935cb440db2460c071e3f087f1"></a><p class="cn" id="3e48cff130ee5f935cb440db2460c071e3f087f1">Import the setting from your own apps settings</p>
+<a name="28eb107c404b764c276ebac64133988bb9f14140"></a><p class="cn" id="28eb107c404b764c276ebac64133988bb9f14140">Based on that setting, you can optionally import classes. And in your model definition...</p>
+<a name="6d3fa8e7d3936dd22dffbb69f7acc58edcd0767a"></a><p class="cn" id="6d3fa8e7d3936dd22dffbb69f7acc58edcd0767a">Optionally declare fields. The only drawback of this depends on the type of field. Changing your mind after the initial table creation might require you to either manually add the field or drop the table and syncdb again.</p>
+<a name="ea2059d8a77d3b682441f1c8aa9d3c04803c7665"></a><p class="cn" id="ea2059d8a77d3b682441f1c8aa9d3c04803c7665">Link to way to do migration with south if field is added.</p>
 </div>
 
 

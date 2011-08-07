@@ -2,6 +2,9 @@
 Adding fieldsets to a model's admin
 ===================================
 
+.. warning::
+   This is just a stub document. It will be fleshed out more. Please don't comment on it.
+
 .. code-block:: python
 
 	for model, modeladmin in admin.site._registry.items():

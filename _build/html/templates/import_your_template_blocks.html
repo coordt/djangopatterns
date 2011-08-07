@@ -46,19 +46,19 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 cn" id="4"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
-<li class="toctree-l1 current cn" id="5"><a class="reference internal" href="index.html">Template Patterns</a><ul class="current">
-<li class="toctree-l2 cn" id="6"><a class="reference internal" href="easily_overridable_templates.html">Easily overridable templates</a></li>
-<li class="toctree-l2 cn" id="7"><a class="reference internal" href="extend_one_template.html">Extend one template</a></li>
-<li class="toctree-l2 current cn" id="8"><a class="current reference internal" href="">Import your template blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Template Patterns</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="easily_overridable_templates.html">Easily overridable templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extend_one_template.html">Extend one template</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Import your template blocks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 cn" id="9"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
-<li class="toctree-l1 cn" id="10"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
-<li class="toctree-l1 cn" id="11"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -90,7 +90,11 @@
             
   <div class="section" id="import-your-template-blocks">
 <h1>Import your template blocks<a class="headerlink" href="#import-your-template-blocks" title="Permalink to this headline">¶</a></h1>
-<p class="cn" id="1">If each template only focuses on one template block and imports other blocks, such as extra header information, you can selectively choose which template to modify: extra_head.html to add this functionality once for all templates, or detail.html to change the content.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<a name="0babc760fd826de7bd1f58acbdc9ca16acfdffcb"></a><p class="last cn" id="0babc760fd826de7bd1f58acbdc9ca16acfdffcb">This is just a stub document. It will be fleshed out more. Please don&#8217;t comment on it.</p>
+</div>
+<a name="37e1afc9b84e0abcc6bb324354fef87cdd375f18"></a><p class="cn" id="37e1afc9b84e0abcc6bb324354fef87cdd375f18">If each template only focuses on one template block and imports other blocks, such as extra header information, you can selectively choose which template to modify: extra_head.html to add this functionality once for all templates, or detail.html to change the content.</p>
 <div class="highlight-python"><pre>{% extends "coolapp/base.html" %}
 
 {% block extra_head %}

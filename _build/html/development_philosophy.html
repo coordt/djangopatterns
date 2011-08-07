@@ -22,7 +22,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Django Patterns" href="index.html" />
-    <link rel="next" title="Configuration Patterns" href="configuration/index.html" />
+    <link rel="next" title="Application Construction" href="app_construction/index.html" />
     <link rel="prev" title="What are pluggable apps?" href="what_are_pluggable_apps.html" /> 
   </head>
   <body>
@@ -35,7 +35,7 @@
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="genindex.html" title="General Index" accesskey="I">index</a></div>
-			<div class="headerButton"><a href="configuration/index.html" title="Configuration Patterns" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="app_construction/index.html" title="Application Construction" accesskey="N">next</a></div>
 			<div class="headerButton"><a href="what_are_pluggable_apps.html" title="What are pluggable apps?" accesskey="P">previous</a></div>
 		</li>
 	</ul>
@@ -45,18 +45,18 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="what_are_pluggable_apps.html">What are pluggable apps?</a></li>
-<li class="toctree-l1 current cn" id="2"><a class="current reference internal" href="">My Development Assumptions and Principles</a><ul>
-<li class="toctree-l2 cn" id="3"><a class="reference internal" href="#key-design-assumptions">Key Design Assumptions</a></li>
-<li class="toctree-l2 cn" id="4"><a class="reference internal" href="#key-design-principles">Key Design Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">My Development Assumptions and Principles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#key-design-assumptions">Key Design Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-design-principles">Key Design Principles</a></li>
 </ul>
 </li>
-<li class="toctree-l1 cn" id="5"><a class="reference internal" href="configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 cn" id="6"><a class="reference internal" href="models/index.html">Model Patterns</a></li>
-<li class="toctree-l1 cn" id="7"><a class="reference internal" href="templates/index.html">Template Patterns</a></li>
-<li class="toctree-l1 cn" id="8"><a class="reference internal" href="urls/index.html">URL patterns</a></li>
-<li class="toctree-l1 cn" id="9"><a class="reference internal" href="decorator_apps/index.html">Decorator App Patterns</a></li>
-<li class="toctree-l1 cn" id="10"><a class="reference internal" href="app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorator_apps/index.html">Decorator App Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/index.html">Model Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="templates/index.html">Template Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urls/index.html">URL patterns</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -88,61 +88,77 @@
             
   <div class="section" id="my-development-assumptions-and-principles">
 <h1>My Development Assumptions and Principles<a class="headerlink" href="#my-development-assumptions-and-principles" title="Permalink to this headline">¶</a></h1>
-<p class="cn" id="1">by Corey Oordt</p>
-<p class="cn" id="2">Since I started developing in Django in 2006, I've been lucky enough to meet and work with many talented people with a variety of experiences. Gradually, typically through failure or dire need, we developed a methodology and approach to development of projects.</p>
-<p class="cn" id="3">The approach was internalized; each of us <em>knew</em> how it worked so it was never directly expressed. With a recent move to a new job, I was struck by the differences and needed to express the ideas in terms of <strong>assumptions</strong> and <strong>principles</strong>.</p>
-<p class="cn" id="4"><em>Assumptions</em> are the preconceptions you and your team hold when approaching a project. These assumptions aren't necessarily bad. As long as you are aware of them, and regularly check to make sure they are valid, they will be helpful.</p>
-<p class="cn" id="5"><em>Principles</em> are the guides to behavior. They are not hard and fast rules that you must never break, merely guides to success that should be understood and deviated from with full knowledge of why it makes sense in the situation.</p>
+<a name="49b410fb82078ed8c302597b2b07173a99ff75f7"></a><p class="cn" id="49b410fb82078ed8c302597b2b07173a99ff75f7">by Corey Oordt</p>
+<a name="19eb0f1a90e3c195df772a2d24c96845c4fba6b2"></a><p class="cn" id="19eb0f1a90e3c195df772a2d24c96845c4fba6b2">Since I started developing in Django in 2006, I&#8217;ve been lucky enough to meet and work with many talented people with a variety of experiences. Gradually, typically through failure or dire need, we developed a methodology and approach to development of projects.</p>
+<a name="6335fd9abef4a3acb74e64dd443dd65bdf7042c0"></a><p class="cn" id="6335fd9abef4a3acb74e64dd443dd65bdf7042c0">The approach was internalized; each of us <em>knew</em> how it worked so it was never directly expressed. With a recent move to a new job, I was struck by the differences and needed to express the ideas in terms of <strong>assumptions</strong> and <strong>principles</strong>.</p>
+<a name="3f6eb9390017b7acf1043f66832bf9186db1f7ad"></a><p class="cn" id="3f6eb9390017b7acf1043f66832bf9186db1f7ad"><em>Assumptions</em> are the preconceptions you and your team hold when approaching a project. These assumptions aren&#8217;t necessarily bad. As long as you are aware of them, and regularly check to make sure they are valid, they will be helpful.</p>
+<a name="908133ead8d25a51cd4303fc2a249e2d8ee770ed"></a><p class="cn" id="908133ead8d25a51cd4303fc2a249e2d8ee770ed"><em>Principles</em> are the guides to behavior. They are not hard and fast rules that you must never break, merely guides to success that should be understood and deviated from with full knowledge of why it makes sense in the situation.</p>
 <div class="section" id="key-design-assumptions">
 <h2>Key Design Assumptions<a class="headerlink" href="#key-design-assumptions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="no-two-projects-are-alike">
 <h3>No two projects are alike.<a class="headerlink" href="#no-two-projects-are-alike" title="Permalink to this headline">¶</a></h3>
-<p class="cn" id="6">Each project will share some things with others, but not all projects will share the same things, or in the same way. You will need to listen to the needs of the end users and the people running the project.</p>
+<a name="4596bb0d5ec690201564ad20b2e19e6c2b298a11"></a><p class="cn" id="4596bb0d5ec690201564ad20b2e19e6c2b298a11">Each project will share some things with others, but not all projects will share the same things, or in the same way. You will need to listen to the needs of the end users and the people running the project.</p>
 </div>
 <div class="section" id="most-projects-will-fail">
 <h3>Most projects will fail<a class="headerlink" href="#most-projects-will-fail" title="Permalink to this headline">¶</a></h3>
-<p class="cn" id="7">It should fail quickly, with as little effort as possible to determine its imminent doom. This is not a pessimism, but innovation. The easier it is to try something to see if it works, the more you will try and the more that will work.</p>
+<a name="6420a0d042d85ea7934130c28fdfc4e278187c1f"></a><p class="cn" id="6420a0d042d85ea7934130c28fdfc4e278187c1f">It should fail quickly, with as little effort as possible to determine its imminent doom. This is not a pessimism, but innovation. The easier it is to try something to see if it works, the more you will try and the more that will work.</p>
 </div>
 <div class="section" id="people-have-their-own-way-of-doing-things">
 <h3>People have their own way of doing things.<a class="headerlink" href="#people-have-their-own-way-of-doing-things" title="Permalink to this headline">¶</a></h3>
-<p class="cn" id="8">I'm an opinionated bastard. As an opinionated bastard, it really torques me when others make me do things in ways I disagree with. When there are several ways to get the same result, let others get there by any of those means.</p>
-<p class="cn" id="9">Another way to look at this is to manage <em>outcomes,</em> not practices or methods.</p>
+<a name="507eaa5ee3ac214ba36c990e4902291772a0d56f"></a><p class="cn" id="507eaa5ee3ac214ba36c990e4902291772a0d56f">I&#8217;m an opinionated bastard. As an opinionated bastard, it really torques me when others make me do things in ways I disagree with. When there are several ways to get the same result, let others get there by any of those means.</p>
+<a name="9e57d2b762ebf4f41d06c4920c74a9d56e3fefa9"></a><p class="cn" id="9e57d2b762ebf4f41d06c4920c74a9d56e3fefa9">Another way to look at this is to manage <em>outcomes,</em> not practices or methods.</p>
 </div>
 <div class="section" id="two-or-more-project-s-requirements-may-conflict">
-<h3>Two or more project's requirements may conflict.<a class="headerlink" href="#two-or-more-project-s-requirements-may-conflict" title="Permalink to this headline">¶</a></h3>
-<p class="cn" id="10">The conflicts only matter if the projects must share something or are co-dependent.</p>
+<h3>Two or more project&#8217;s requirements may conflict.<a class="headerlink" href="#two-or-more-project-s-requirements-may-conflict" title="Permalink to this headline">¶</a></h3>
+<a name="ca6a583ff34e5df2070cd96ca05e52953bb86f56"></a><p class="cn" id="ca6a583ff34e5df2070cd96ca05e52953bb86f56">The conflicts only matter if the projects must share something or are co-dependent.</p>
 </div>
 <div class="section" id="things-change">
 <h3>Things change.<a class="headerlink" href="#things-change" title="Permalink to this headline">¶</a></h3>
-<p class="cn" id="11">Life moves very fast on the internet. Projects must adapt quickly or fail miserably.</p>
+<a name="719132466372b03fbbe0036e77ca6868cfba46c5"></a><p class="cn" id="719132466372b03fbbe0036e77ca6868cfba46c5">Life moves very fast on the internet. Projects must adapt quickly or fail miserably.</p>
 </div>
 </div>
 <div class="section" id="key-design-principles">
 <h2>Key Design Principles<a class="headerlink" href="#key-design-principles" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li class="cn" id="12"><p class="first cn" id="13">Break down the tools to their simplest bits.</p>
+<div class="section" id="design-the-user-s-experience-first">
+<h3>Design the user&#8217;s experience first<a class="headerlink" href="#design-the-user-s-experience-first" title="Permalink to this headline">¶</a></h3>
+<a name="61db8dc01bf0b6c171198a6c1c2a869ded997404"></a><p class="cn" id="61db8dc01bf0b6c171198a6c1c2a869ded997404">Many developers create solutions that are functional, but not usable. When you start with the user&#8217;s experience, you at least get more usable solutions, if not better ones.</p>
+</div>
+<div class="section" id="break-down-the-tools-to-their-simplest-bits">
+<h3>Break down the tools to their simplest bits.<a class="headerlink" href="#break-down-the-tools-to-their-simplest-bits" title="Permalink to this headline">¶</a></h3>
+<a name="2c125dd1fd2dcddfd769b9e0cdf41399f55929e4"></a><p class="cn" id="2c125dd1fd2dcddfd769b9e0cdf41399f55929e4">It is easier to find new uses for simple tools than complex tools. I am constantly surprised how people have found new ways to use code that was meant for something else.</p>
+<a name="1b8077c33f39a6be854bd7885866348c135ea3f4"></a><p class="cn" id="1b8077c33f39a6be854bd7885866348c135ea3f4">Similar ideas are:</p>
+<ul class="simple">
+<li><a name="27a9d48370b362f9ff1e84e4085c31905b57b783"></a><p class="first cn" id="27a9d48370b362f9ff1e84e4085c31905b57b783">Separate functionality whenever possible.</p>
 </li>
-<li class="cn" id="14"><p class="first cn" id="15">Separate functionality whenever possible.</p>
+<li><a name="db1f3d3aa3322d36443349805fb88224804df1cb"></a><p class="first cn" id="db1f3d3aa3322d36443349805fb88224804df1cb">Be flexible in implementation.</p>
 </li>
-<li class="cn" id="16"><p class="first cn" id="17">Be flexible in implementation.</p>
+<li><a name="a081b8e46333f2adbf62148c721ed6091e3edfb7"></a><p class="first cn" id="a081b8e46333f2adbf62148c721ed6091e3edfb7">Couple loosely.</p>
 </li>
-<li class="cn" id="18"><p class="first cn" id="19">Couple loosely.</p>
+</ul>
+</div>
+<div class="section" id="code-is-like-a-making-a-baby-only-do-it-if-you-are-willing-to-support-it-for-the-rest-of-your-life">
+<h3>Code is like a making a baby: only do it if you are willing to support it for the rest of your life.<a class="headerlink" href="#code-is-like-a-making-a-baby-only-do-it-if-you-are-willing-to-support-it-for-the-rest-of-your-life" title="Permalink to this headline">¶</a></h3>
+<a name="9f6dd01d5024ef8432e9eb13aec1361fb7418c48"></a><p class="cn" id="9f6dd01d5024ef8432e9eb13aec1361fb7418c48">I&#8217;ve learned the hard way that code you wrote years ago can come back to haunt you. I&#8217;ve received calls from people I wrote code for years before asking for help due to an unforeseen bug. (To me the unforeseen bug was that they were still using the software.) Unless you are willing to be a jerk, you got to give them a hand.</p>
+<a name="2876ecb1aa18c047fb236dc138c946548bdc1539"></a><p class="cn" id="2876ecb1aa18c047fb236dc138c946548bdc1539">This leads to two practices: use external code libraries whenever possible to reduce the amount of code for which you are directly responsible, and write your code in a way that you won&#8217;t be too horrified to see it in three years.</p>
+<a name="3803fb89c08ed2951aa6a660e0882d23f81a921b"></a><p class="cn" id="3803fb89c08ed2951aa6a660e0882d23f81a921b">A similar practice is when making a utility to enhance functionality, don&#8217;t assume that the implementer will &#8220;own the code&#8221;.</p>
+</div>
+<div class="section" id="external-dependencies-should-be-declared-and-few">
+<h3>External dependencies should be declared and few<a class="headerlink" href="#external-dependencies-should-be-declared-and-few" title="Permalink to this headline">¶</a></h3>
+<a name="d229405ffada1d8c0e11626eae473aeb86bbd4a5"></a><p class="cn" id="d229405ffada1d8c0e11626eae473aeb86bbd4a5">I see dependencies like farts on an elevator: the fewer the better (and please confess).</p>
+</div>
+<div class="section" id="if-you-want-people-to-do-something-make-it-incredibly-easy-to-do">
+<h3>If you want people to do something, make it incredibly easy to do.<a class="headerlink" href="#if-you-want-people-to-do-something-make-it-incredibly-easy-to-do" title="Permalink to this headline">¶</a></h3>
+<a name="ad5148ec78d5aa7875c7366fe5a5d57495c30812"></a><p class="cn" id="ad5148ec78d5aa7875c7366fe5a5d57495c30812">And don&#8217;t forget its sibling: <em>If you want people to do something a specific way, make it easier to do it that way than any other.</em></p>
+<a name="6ccb8ec10e21b8d22af42d6baeba726f1df9759f"></a><p class="cn" id="6ccb8ec10e21b8d22af42d6baeba726f1df9759f">Even small barriers will limit how often &#8220;best practices&#8221; are followed. People put off things if:</p>
+<ul class="simple">
+<li><a name="5d0d5ca0bb1e02dade4dfd0889ffcb3a40694dba"></a><p class="first cn" id="5d0d5ca0bb1e02dade4dfd0889ffcb3a40694dba">They have to do prep work to accomplish the task</p>
 </li>
-<li class="cn" id="20"><p class="first cn" id="21">Code is like a making a baby: only do it if you are willing to support it for the rest of your life.</p>
+<li><a name="f9fbb293e7025a10a6edc2ec3ce2d7cf7c24c4d9"></a><p class="first cn" id="f9fbb293e7025a10a6edc2ec3ce2d7cf7c24c4d9">They aren&#8217;t sure how to accomplish the task</p>
 </li>
-<li class="cn" id="22"><p class="first cn" id="23">External dependencies should be declared and be few: like farts in an elevator.</p>
+<li><a name="cf0bbe4ace992e54ce007ec179cdaa0e7e0db1f7"></a><p class="first cn" id="cf0bbe4ace992e54ce007ec179cdaa0e7e0db1f7">They don&#8217;t understand why the task is important</p>
 </li>
-<li class="cn" id="24"><p class="first cn" id="25">If you want people to do something, make it incredibly easy to do.</p>
-</li>
-<li class="cn" id="26"><p class="first cn" id="27">If you want people to do something a specific way, make it easier to do it that way than any other.</p>
-</li>
-<li class="cn" id="28"><p class="first cn" id="29">The user's experience is the most important part, and should be designed first.</p>
-</li>
-<li class="cn" id="30"><p class="first cn" id="31">Make it easy to divide up work without stepping on toes.</p>
-</li>
-<li class="cn" id="32"><p class="first cn" id="33">When making a utility to enhance functionality, don't assume that the implementer will &quot;own the code&quot;.</p>
-</li>
-</ol>
+</ul>
+</div>
 </div>
 </div>
 

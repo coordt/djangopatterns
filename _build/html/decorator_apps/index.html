@@ -22,8 +22,8 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Django Patterns" href="../index.html" />
-    <link rel="next" title="Adding fieldsets to a model's admin" href="add_fieldsets_to_model_admin.html" />
-    <link rel="prev" title="URLs that live under any prefix" href="../urls/urls_that_live_under_any_prefix.html" /> 
+    <link rel="next" title="Adding fieldsets to a model’s admin" href="add_fieldsets_to_model_admin.html" />
+    <link rel="prev" title="Configurable Applications" href="../configuration/configure_app.html" /> 
   </head>
   <body>
 <div id="docstitle">
@@ -35,8 +35,8 @@
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
-			<div class="headerButton"><a href="add_fieldsets_to_model_admin.html" title="Adding fieldsets to a model's admin" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="../urls/urls_that_live_under_any_prefix.html" title="URLs that live under any prefix" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="add_fieldsets_to_model_admin.html" title="Adding fieldsets to a model’s admin" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="../configuration/configure_app.html" title="Configurable Applications" accesskey="P">previous</a></div>
 		</li>
 	</ul>
 </div>
@@ -45,20 +45,20 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 cn" id="4"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
-<li class="toctree-l1 cn" id="5"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
-<li class="toctree-l1 cn" id="6"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
-<li class="toctree-l1 current cn" id="7"><a class="current reference internal" href="">Decorator App Patterns</a><ul>
-<li class="toctree-l2 cn" id="8"><a class="reference internal" href="add_fieldsets_to_model_admin.html">Adding fieldsets to a model's admin</a></li>
-<li class="toctree-l2 cn" id="9"><a class="reference internal" href="change_the_admin_widget.html">Change the admin widget of a field</a></li>
-<li class="toctree-l2 cn" id="10"><a class="reference internal" href="lazy_field_insertion.html">Lazy Field Insertion</a></li>
-<li class="toctree-l2 cn" id="11"><a class="reference internal" href="lazy_manager_insertion.html">Lazy Manager Insertion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Decorator App Patterns</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="add_fieldsets_to_model_admin.html">Adding fieldsets to a model&#8217;s admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_the_admin_widget.html">Change the admin widget of a field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lazy_field_insertion.html">Lazy Field Insertion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lazy_manager_insertion.html">Lazy Manager Insertion</a></li>
 </ul>
 </li>
-<li class="toctree-l1 cn" id="12"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -92,10 +92,10 @@
 <h1>Decorator App Patterns<a class="headerlink" href="#decorator-app-patterns" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="add_fieldsets_to_model_admin.html">Adding fieldsets to a model's admin</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="change_the_admin_widget.html">Change the admin widget of a field</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="lazy_field_insertion.html">Lazy Field Insertion</a></li>
-<li class="toctree-l1 cn" id="4"><a class="reference internal" href="lazy_manager_insertion.html">Lazy Manager Insertion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add_fieldsets_to_model_admin.html">Adding fieldsets to a model&#8217;s admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change_the_admin_widget.html">Change the admin widget of a field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lazy_field_insertion.html">Lazy Field Insertion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lazy_manager_insertion.html">Lazy Manager Insertion</a></li>
 </ul>
 </div>
 </div>

@@ -46,19 +46,19 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 cn" id="4"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
-<li class="toctree-l1 current cn" id="5"><a class="reference internal" href="index.html">Template Patterns</a><ul class="current">
-<li class="toctree-l2 current cn" id="6"><a class="current reference internal" href="">Easily overridable templates</a></li>
-<li class="toctree-l2 cn" id="7"><a class="reference internal" href="extend_one_template.html">Extend one template</a></li>
-<li class="toctree-l2 cn" id="8"><a class="reference internal" href="import_your_template_blocks.html">Import your template blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Template Patterns</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Easily overridable templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extend_one_template.html">Extend one template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import_your_template_blocks.html">Import your template blocks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 cn" id="9"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
-<li class="toctree-l1 cn" id="10"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
-<li class="toctree-l1 cn" id="11"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -90,8 +90,12 @@
             
   <div class="section" id="easily-overridable-templates">
 <h1>Easily overridable templates<a class="headerlink" href="#easily-overridable-templates" title="Permalink to this headline">¶</a></h1>
-<p class="cn" id="1">Templates are an important part of your pluggable app. They demonstrate how your app works. The more complex your app, the more important templates are. Following a few practices can make your templates very useful. We have two goals: 1. Get demonstrable functionality in as short a time as possible, and 2. modify the fewest templates to do so.</p>
-<p class="cn" id="2">Instead of putting your templates loose in your templates directory where they can conflict with other apps templates, <strong>* put them in a directory within templates, named after your app to name space them. *</strong> Then you reference them as the relative path from templates, in this case: coolapp/base.html</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<a name="3f50d006284ded306ddc9cf3bb5f59d69d68f0fe"></a><p class="last cn" id="3f50d006284ded306ddc9cf3bb5f59d69d68f0fe">This is just a stub document. It will be fleshed out more. Please don&#8217;t comment on it.</p>
+</div>
+<a name="b99c7d9f5c7ab251ce86cb9a610f0735b7d331b4"></a><p class="cn" id="b99c7d9f5c7ab251ce86cb9a610f0735b7d331b4">Templates are an important part of your pluggable app. They demonstrate how your app works. The more complex your app, the more important templates are. Following a few practices can make your templates very useful. We have two goals: 1. Get demonstrable functionality in as short a time as possible, and 2. modify the fewest templates to do so.</p>
+<a name="deeb9dee5db3edd36e9ea7a7c8246c00a28abb73"></a><p class="cn" id="deeb9dee5db3edd36e9ea7a7c8246c00a28abb73">Instead of putting your templates loose in your templates directory where they can conflict with other apps templates, <strong>* put them in a directory within templates, named after your app to name space them. *</strong> Then you reference them as the relative path from templates, in this case: coolapp/base.html</p>
 <div class="highlight-python"><pre>coolapp
 +-templates
   +-coolapp

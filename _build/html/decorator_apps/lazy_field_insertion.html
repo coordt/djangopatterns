@@ -46,20 +46,20 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 cn" id="4"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
-<li class="toctree-l1 cn" id="5"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
-<li class="toctree-l1 cn" id="6"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
-<li class="toctree-l1 current cn" id="7"><a class="reference internal" href="index.html">Decorator App Patterns</a><ul class="current">
-<li class="toctree-l2 cn" id="8"><a class="reference internal" href="add_fieldsets_to_model_admin.html">Adding fieldsets to a model's admin</a></li>
-<li class="toctree-l2 cn" id="9"><a class="reference internal" href="change_the_admin_widget.html">Change the admin widget of a field</a></li>
-<li class="toctree-l2 current cn" id="10"><a class="current reference internal" href="">Lazy Field Insertion</a></li>
-<li class="toctree-l2 cn" id="11"><a class="reference internal" href="lazy_manager_insertion.html">Lazy Manager Insertion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Decorator App Patterns</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="add_fieldsets_to_model_admin.html">Adding fieldsets to a model&#8217;s admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_the_admin_widget.html">Change the admin widget of a field</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Lazy Field Insertion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lazy_manager_insertion.html">Lazy Manager Insertion</a></li>
 </ul>
 </li>
-<li class="toctree-l1 cn" id="12"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -91,7 +91,11 @@
             
   <div class="section" id="lazy-field-insertion">
 <h1>Lazy Field Insertion<a class="headerlink" href="#lazy-field-insertion" title="Permalink to this headline">¶</a></h1>
-<p class="cn" id="1">The idea is allow developers to decide which models will have categories in the project’s settings.py, using a dictionary with the model as the key and the field or fields as the value.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<a name="1a4f588b49caf8810e9c4833a7a5fdaa0e9741c4"></a><p class="last cn" id="1a4f588b49caf8810e9c4833a7a5fdaa0e9741c4">This is just a stub document. It will be fleshed out more. Please don&#8217;t comment on it.</p>
+</div>
+<a name="f6e3e61683926e1309719081c25658e620e9910c"></a><p class="cn" id="f6e3e61683926e1309719081c25658e620e9910c">The idea is allow developers to decide which models will have categories in the project’s settings.py, using a dictionary with the model as the key and the field or fields as the value.</p>
 <div class="highlight-python"><pre>'FK_REGISTRY': {
     'flatpages.flatpage': 'category',
     'simpletext.simpletext': (
@@ -107,13 +111,13 @@
     ),
 },</pre>
 </div>
-<p class="cn" id="2">at the bottom of the category app's __init__.py, you can read the configuration from settings.</p>
-<p class="cn" id="3">loop through them</p>
-<p class="cn" id="4">Do a bit of error checking</p>
-<p class="cn" id="5">Load the model class</p>
-<p class="cn" id="6">Loop through the given fields</p>
-<p class="cn" id="7">We make sure that the field doesn't already exist by attempting to get it</p>
-<p class="cn" id="8">Finally we add the field to the model by instantiating the field and calling its contribute_to_class method.</p>
+<a name="7d61ea848fe348a37a0cea503c29c7eff6dbe8bd"></a><p class="cn" id="7d61ea848fe348a37a0cea503c29c7eff6dbe8bd">at the bottom of the category app&#8217;s __init__.py, you can read the configuration from settings.</p>
+<a name="1e121874028ffdb94a86c242ec982e685eb98dae"></a><p class="cn" id="1e121874028ffdb94a86c242ec982e685eb98dae">loop through them</p>
+<a name="f7f5eafc0747522183b33c5d492d1c3c0edd7486"></a><p class="cn" id="f7f5eafc0747522183b33c5d492d1c3c0edd7486">Do a bit of error checking</p>
+<a name="494c4161b64038192435dfbfc269890e80c30c8c"></a><p class="cn" id="494c4161b64038192435dfbfc269890e80c30c8c">Load the model class</p>
+<a name="0a294c8be65fc66e02c63b011e339141b6bcc463"></a><p class="cn" id="0a294c8be65fc66e02c63b011e339141b6bcc463">Loop through the given fields</p>
+<a name="64d5cf42c8d763e6301ed44dcb4112b7ba41b566"></a><p class="cn" id="64d5cf42c8d763e6301ed44dcb4112b7ba41b566">We make sure that the field doesn&#8217;t already exist by attempting to get it</p>
+<a name="7ecbf0ba79c40b6e514fb08ceec0c9cba23c8304"></a><p class="cn" id="7ecbf0ba79c40b6e514fb08ceec0c9cba23c8304">Finally we add the field to the model by instantiating the field and calling its contribute_to_class method.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">fields</span>
 
 <span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">FieldDoesNotExist</span>

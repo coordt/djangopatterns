@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Adding fieldsets to a model&#39;s admin &mdash; Django Patterns</title>
+    <title>Adding fieldsets to a model’s admin &mdash; Django Patterns</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -31,7 +31,7 @@
 	<p>Django Patterns</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Adding fieldsets to a model's admin</h1></div>
+	<div id="title"><h1>Adding fieldsets to a model’s admin</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
@@ -46,20 +46,20 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 cn" id="4"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
-<li class="toctree-l1 cn" id="5"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
-<li class="toctree-l1 cn" id="6"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
-<li class="toctree-l1 current cn" id="7"><a class="reference internal" href="index.html">Decorator App Patterns</a><ul class="current">
-<li class="toctree-l2 current cn" id="8"><a class="current reference internal" href="">Adding fieldsets to a model's admin</a></li>
-<li class="toctree-l2 cn" id="9"><a class="reference internal" href="change_the_admin_widget.html">Change the admin widget of a field</a></li>
-<li class="toctree-l2 cn" id="10"><a class="reference internal" href="lazy_field_insertion.html">Lazy Field Insertion</a></li>
-<li class="toctree-l2 cn" id="11"><a class="reference internal" href="lazy_manager_insertion.html">Lazy Manager Insertion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Decorator App Patterns</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Adding fieldsets to a model&#8217;s admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_the_admin_widget.html">Change the admin widget of a field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lazy_field_insertion.html">Lazy Field Insertion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lazy_manager_insertion.html">Lazy Manager Insertion</a></li>
 </ul>
 </li>
-<li class="toctree-l1 cn" id="12"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -90,7 +90,11 @@
           <div class="body">
             
   <div class="section" id="adding-fieldsets-to-a-model-s-admin">
-<h1>Adding fieldsets to a model's admin<a class="headerlink" href="#adding-fieldsets-to-a-model-s-admin" title="Permalink to this headline">¶</a></h1>
+<h1>Adding fieldsets to a model&#8217;s admin<a class="headerlink" href="#adding-fieldsets-to-a-model-s-admin" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<a name="4d93c8342e2331789fed2c85bdddaec130720e3b"></a><p class="last cn" id="4d93c8342e2331789fed2c85bdddaec130720e3b">This is just a stub document. It will be fleshed out more. Please don&#8217;t comment on it.</p>
+</div>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">model</span><span class="p">,</span> <span class="n">modeladmin</span> <span class="ow">in</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">_registry</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">model_registry</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="ow">and</span> <span class="n">modeladmin</span><span class="o">.</span><span class="n">fieldsets</span><span class="p">:</span>
         <span class="n">fieldsets</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">modeladmin</span><span class="p">,</span> <span class="s">&#39;fieldsets&#39;</span><span class="p">,</span> <span class="p">())</span>
@@ -127,7 +131,7 @@
     </div>
 	<div id="breadcrumbs">
 		<a href="index.html" accesskey="U">Decorator App Patterns</a><img src="../_static/triangle_closed.png" height="9" width="9" alt="&gt;">
-		Adding fieldsets to a model's admin
+		Adding fieldsets to a model&#8217;s admin
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

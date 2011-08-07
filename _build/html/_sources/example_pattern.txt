@@ -1,3 +1,5 @@
+:orphan:
+
 ============
 Pattern Name
 ============
@@ -20,9 +22,6 @@ Sources
 
 Useful Links
 ============
-
-Code Examples
-=============
 
 Where is it used?
 =================

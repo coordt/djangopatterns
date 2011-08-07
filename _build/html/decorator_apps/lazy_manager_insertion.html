@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Django Patterns" href="../index.html" />
     <link rel="up" title="Decorator App Patterns" href="index.html" />
-    <link rel="next" title="Application Construction" href="../app_construction/index.html" />
+    <link rel="next" title="Model Patterns" href="../models/index.html" />
     <link rel="prev" title="Lazy Field Insertion" href="lazy_field_insertion.html" /> 
   </head>
   <body>
@@ -36,7 +36,7 @@
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
-			<div class="headerButton"><a href="../app_construction/index.html" title="Application Construction" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="../models/index.html" title="Model Patterns" accesskey="N">next</a></div>
 			<div class="headerButton"><a href="lazy_field_insertion.html" title="Lazy Field Insertion" accesskey="P">previous</a></div>
 		</li>
 	</ul>
@@ -46,20 +46,20 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 cn" id="4"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
-<li class="toctree-l1 cn" id="5"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
-<li class="toctree-l1 cn" id="6"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
-<li class="toctree-l1 current cn" id="7"><a class="reference internal" href="index.html">Decorator App Patterns</a><ul class="current">
-<li class="toctree-l2 cn" id="8"><a class="reference internal" href="add_fieldsets_to_model_admin.html">Adding fieldsets to a model's admin</a></li>
-<li class="toctree-l2 cn" id="9"><a class="reference internal" href="change_the_admin_widget.html">Change the admin widget of a field</a></li>
-<li class="toctree-l2 cn" id="10"><a class="reference internal" href="lazy_field_insertion.html">Lazy Field Insertion</a></li>
-<li class="toctree-l2 current cn" id="11"><a class="current reference internal" href="">Lazy Manager Insertion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Decorator App Patterns</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="add_fieldsets_to_model_admin.html">Adding fieldsets to a model&#8217;s admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="change_the_admin_widget.html">Change the admin widget of a field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lazy_field_insertion.html">Lazy Field Insertion</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Lazy Manager Insertion</a></li>
 </ul>
 </li>
-<li class="toctree-l1 cn" id="12"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -91,18 +91,22 @@
             
   <div class="section" id="lazy-manager-insertion">
 <h1>Lazy Manager Insertion<a class="headerlink" href="#lazy-manager-insertion" title="Permalink to this headline">¶</a></h1>
-<p class="cn" id="1">Loosely based on Django-mptt. It is very similar to how we handled inserting a field.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<a name="67c197e78f40e9995f19c35bb764e8c7d3615e98"></a><p class="last cn" id="67c197e78f40e9995f19c35bb764e8c7d3615e98">This is just a stub document. It will be fleshed out more. Please don&#8217;t comment on it.</p>
+</div>
+<a name="33dfffdc6daca8fa88bbac9140346abd16cd0095"></a><p class="cn" id="33dfffdc6daca8fa88bbac9140346abd16cd0095">Loosely based on Django-mptt. It is very similar to how we handled inserting a field.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">COOLAPP_MODELS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">&#39;app1.Model&#39;</span><span class="p">:</span> <span class="s">&#39;cool_manager&#39;</span><span class="p">,</span>
     <span class="s">&#39;app2.Model&#39;</span><span class="p">:</span> <span class="s">&#39;cool_manager&#39;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p class="cn" id="2">At the bottom of this app’s models.py, you can read the configuration from settings.</p>
-<p class="cn" id="3">loop through them and Do a bit of error checking</p>
-<p class="cn" id="4">Load the model class</p>
-<p class="cn" id="5">Loop through the given fields</p>
-<p class="cn" id="6">We make sure that the model doesn’t have an attribute by the same name, we add the field to the model by instantiating the manager and calling its contribute_to_class method.</p>
+<a name="0c879f7517b59fc397fb136f2b09b23aaba2d813"></a><p class="cn" id="0c879f7517b59fc397fb136f2b09b23aaba2d813">At the bottom of this app’s models.py, you can read the configuration from settings.</p>
+<a name="818741d17bc8dc68da0ff527aa5a7cd68dd607e9"></a><p class="cn" id="818741d17bc8dc68da0ff527aa5a7cd68dd607e9">loop through them and Do a bit of error checking</p>
+<a name="cfb633eb2deff7c073a679a18a0e9d2c7fd93eaa"></a><p class="cn" id="cfb633eb2deff7c073a679a18a0e9d2c7fd93eaa">Load the model class</p>
+<a name="e6861a0db12657d4fa8f3c8e5eb6dc0f3eb50dfc"></a><p class="cn" id="e6861a0db12657d4fa8f3c8e5eb6dc0f3eb50dfc">Loop through the given fields</p>
+<a name="0e3768d841005c2ecf95c14dfcda55c5f2a7b01a"></a><p class="cn" id="0e3768d841005c2ecf95c14dfcda55c5f2a7b01a">We make sure that the model doesn’t have an attribute by the same name, we add the field to the model by instantiating the manager and calling its contribute_to_class method.</p>
 <div class="highlight-python"><pre>from django.db.models import get_model
 import django.conf import settings
 from coolapp.managers import CustomManager

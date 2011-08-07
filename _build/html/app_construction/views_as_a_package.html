@@ -21,7 +21,10 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Django Patterns" href="../index.html" /> 
+    <link rel="top" title="Django Patterns" href="../index.html" />
+    <link rel="up" title="Application Construction" href="index.html" />
+    <link rel="next" title="Configuration Patterns" href="../configuration/index.html" />
+    <link rel="prev" title="Version Reporting" href="version_reporting.html" /> 
   </head>
   <body>
 <div id="docstitle">
@@ -33,6 +36,8 @@
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="../configuration/index.html" title="Configuration Patterns" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="version_reporting.html" title="Version Reporting" accesskey="P">previous</a></div>
 		</li>
 	</ul>
 </div>
@@ -40,15 +45,19 @@
 <div id="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
-	<ul>
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 cn" id="4"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
-<li class="toctree-l1 cn" id="5"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
-<li class="toctree-l1 cn" id="6"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
-<li class="toctree-l1 cn" id="7"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
-<li class="toctree-l1 cn" id="8"><a class="reference internal" href="index.html">Application Construction</a></li>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Application Construction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="version_reporting.html">Version Reporting</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Views as a package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -80,6 +89,10 @@
             
   <div class="section" id="views-as-a-package">
 <h1>Views as a package<a class="headerlink" href="#views-as-a-package" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<a name="b68097787ad8cce7b6d5cced05c51805fd8bd6c1"></a><p class="last cn" id="b68097787ad8cce7b6d5cced05c51805fd8bd6c1">This is just a stub document. It will be fleshed out more. Please don&#8217;t comment on it.</p>
+</div>
 <div class="section" id="what-problem-does-this-pattern-solve">
 <h2>What problem does this pattern solve?<a class="headerlink" href="#what-problem-does-this-pattern-solve" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -91,14 +104,14 @@
 </div>
 <div class="section" id="how-to-use-it">
 <h2>How to use it<a class="headerlink" href="#how-to-use-it" title="Permalink to this headline">¶</a></h2>
-<p class="cn" id="1">Convert views.py into</p>
+<a name="c54c6e1773e65f6f132c6f8492aeeaa41fbafa08"></a><p class="cn" id="c54c6e1773e65f6f132c6f8492aeeaa41fbafa08">Convert views.py into</p>
 <div class="highlight-python"><pre>views
 ├── __init__.py
 ├── foo.py
 ├── bar.py
 └── baz.py</pre>
 </div>
-<p class="cn" id="2">Where __init__.py contains</p>
+<a name="430d53799e9fd7ac4f1547eaf65e0f65abb0841d"></a><p class="cn" id="430d53799e9fd7ac4f1547eaf65e0f65abb0841d">Where __init__.py contains</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">foo</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">bar</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">baz</span> <span class="kn">import</span> <span class="o">*</span>
@@ -107,7 +120,7 @@
 </div>
 <div class="section" id="sources">
 <h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
-<p class="cn" id="3"><a class="reference external" href="http://stackoverflow.com/questions/2675722/django-breaking-up-views">http://stackoverflow.com/questions/2675722/django-breaking-up-views</a></p>
+<a name="4c48ff85d52d4f6d29fb3717526738b759e4ea7a"></a><p class="cn" id="4c48ff85d52d4f6d29fb3717526738b759e4ea7a"><a class="reference external" href="http://stackoverflow.com/questions/2675722/django-breaking-up-views">http://stackoverflow.com/questions/2675722/django-breaking-up-views</a></p>
 </div>
 <div class="section" id="useful-links">
 <h2>Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
@@ -133,6 +146,7 @@
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
+		<a href="index.html" accesskey="U">Application Construction</a><img src="../_static/triangle_closed.png" height="9" width="9" alt="&gt;">
 		Views as a package
 		</ul>
 	</div>

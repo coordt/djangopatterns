@@ -21,7 +21,10 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Django Patterns" href="../index.html" /> 
+    <link rel="top" title="Django Patterns" href="../index.html" />
+    <link rel="up" title="Application Construction" href="index.html" />
+    <link rel="next" title="Views as a package" href="views_as_a_package.html" />
+    <link rel="prev" title="Application Construction" href="index.html" /> 
   </head>
   <body>
 <div id="docstitle">
@@ -33,6 +36,8 @@
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="views_as_a_package.html" title="Views as a package" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="index.html" title="Application Construction" accesskey="P">previous</a></div>
 		</li>
 	</ul>
 </div>
@@ -40,15 +45,19 @@
 <div id="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
-	<ul>
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 cn" id="4"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
-<li class="toctree-l1 cn" id="5"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
-<li class="toctree-l1 cn" id="6"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
-<li class="toctree-l1 cn" id="7"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
-<li class="toctree-l1 cn" id="8"><a class="reference internal" href="index.html">Application Construction</a></li>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Application Construction</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Version Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views_as_a_package.html">Views as a package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/index.html">Model Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -82,15 +91,46 @@
 <h1>Version Reporting<a class="headerlink" href="#version-reporting" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-problem-does-this-pattern-solve">
 <h2>What problem does this pattern solve?<a class="headerlink" href="#what-problem-does-this-pattern-solve" title="Permalink to this headline">¶</a></h2>
-<p class="cn" id="1">It provides a flexible method of recording and reporting your application's version.</p>
+<a name="fb7f73bd2bf8e3d65a470d742364d15c26b99ef3"></a><p class="cn" id="fb7f73bd2bf8e3d65a470d742364d15c26b99ef3">It provides a flexible method of recording and reporting your application&#8217;s version.</p>
 </div>
 <div class="section" id="when-to-use-it">
 <h2>When to use it<a class="headerlink" href="#when-to-use-it" title="Permalink to this headline">¶</a></h2>
-<p class="cn" id="2">You should use it with any application or project that has specific releases.</p>
+<a name="e2e66eff5eabd07cc731a2f85c0778c67d08ceec"></a><p class="cn" id="e2e66eff5eabd07cc731a2f85c0778c67d08ceec">You should use it with any application or project that has specific releases.</p>
 </div>
 <div class="section" id="why-should-i-use-it">
 <h2>Why should I use it?<a class="headerlink" href="#why-should-i-use-it" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils cn" id="3">
+<ol class="arabic simple">
+<li><a name="8491be348859a869255ee2ea3e303c5ba8cddeea"></a><p class="first cn" id="8491be348859a869255ee2ea3e303c5ba8cddeea">It is easy to see which version is currently installed somewhere.</p>
+</li>
+<li><a name="d74b4e57daa3962d30748a6df16b7700b7a3df19"></a><p class="first cn" id="d74b4e57daa3962d30748a6df16b7700b7a3df19">It is easy to import the version into other places, like documentation or packaging.</p>
+</li>
+<li><a name="554b4ae6fc5c3a3d6901d4c7a9f1e062b5cd781c"></a><p class="first cn" id="554b4ae6fc5c3a3d6901d4c7a9f1e062b5cd781c">It is easy for others to test the version of your code to better handle backwards-compatibility.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="how-to-use-it">
+<h2>How to use it<a class="headerlink" href="#how-to-use-it" title="Permalink to this headline">¶</a></h2>
+<a name="ccc8209bb9c445c553eec5ae9a221860e06346aa"></a><p class="cn" id="ccc8209bb9c445c553eec5ae9a221860e06346aa"><a class="reference external" href="http://www.python.org/dev/peps/pep-0386/#the-new-versioning-algorithm">PEP 386</a> defines the standard way to specify versions within the Python community. The most common scenario is the <tt class="docutils literal"><span class="pre">Major.Minor.Micro</span></tt> with a possible <tt class="docutils literal"><span class="pre">alpha/beta/release</span> <span class="pre">candidate</span></tt> suffix.</p>
+<a name="2de40fe2087fb98ddebb19a3ae7fb00fea57654a"></a><p class="cn" id="2de40fe2087fb98ddebb19a3ae7fb00fea57654a">Examples:</p>
+<div class="highlight-python"><pre>1.0
+0.6.1
+2.1.1b1
+0.3rc2</pre>
+</div>
+<a name="cf58c1b3a6c755d9996a403799a605f3cf440318"></a><p class="cn" id="cf58c1b3a6c755d9996a403799a605f3cf440318">When recording your version number you should:</p>
+<ul class="simple">
+<li><a name="4557f7be5cde9690eb728ba79cb01099227ae77b"></a><p class="first cn" id="4557f7be5cde9690eb728ba79cb01099227ae77b">Put it within the code, so it&#8217;s accessible after the package is installed</p>
+</li>
+<li><a name="294dea444a38590f0e45cb4aafbaf6d91c1c2024"></a><p class="first cn" id="294dea444a38590f0e45cb4aafbaf6d91c1c2024">Easily retrieve all the individual parts of the version</p>
+</li>
+<li><a name="b89f094fd5b26b2ec393f51f64f4ab456a98b94e"></a><p class="first cn" id="b89f094fd5b26b2ec393f51f64f4ab456a98b94e">Record the individual version parts as integers (where appropriate) for easy comparison</p>
+</li>
+<li><a name="be882dc3caa86d36c4e42fd2d51e123133985ddb"></a><p class="first cn" id="be882dc3caa86d36c4e42fd2d51e123133985ddb">Have a properly formatted string version available</p>
+</li>
+</ul>
+<a name="80005842a3b012a1c59431094af624121aa26050"></a><p class="cn" id="80005842a3b012a1c59431094af624121aa26050">Putting the version information in your application&#8217;s <tt class="docutils literal"><span class="pre">__init__.py</span></tt> is a great, out-of-the-way place.</p>
+<a name="fe8b56fc7da22054c5b742777d3e6c29e9bb614d"></a><p class="cn" id="fe8b56fc7da22054c5b742777d3e6c29e9bb614d">Here is an example that I use:</p>
+<dl class="docutils">
 <dt><strong>coolapp/__index__.py</strong></dt>
 <dd><div class="first last highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -131,6 +171,44 @@
 </td></tr></table></div>
 </dd>
 </dl>
+<a name="7bbd207f83e0ec0fa3df3bf6b2cee94ddd9a4c03"></a><p class="cn" id="7bbd207f83e0ec0fa3df3bf6b2cee94ddd9a4c03">This sets up a <tt class="docutils literal"><span class="pre">__version_info__</span></tt> dictionary to hold the version fields, a <tt class="docutils literal"><span class="pre">get_version()</span></tt> function to format the <tt class="docutils literal"><span class="pre">__version_info__</span></tt> into a string, and <tt class="docutils literal"><span class="pre">__version__</span></tt>, which is the formatted string version. It is similar to Django&#8217;s method:</p>
+<dl class="docutils">
+<dt><strong>django/__init__.py</strong></dt>
+<dd><div class="first last highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">VERSION</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;alpha&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_version</span><span class="p">():</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">.</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">VERSION</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">VERSION</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">VERSION</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">.</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">version</span><span class="p">,</span> <span class="n">VERSION</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">VERSION</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span> <span class="o">==</span> <span class="p">(</span><span class="s">&#39;alpha&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> pre-alpha&#39;</span> <span class="o">%</span> <span class="n">version</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">VERSION</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;final&#39;</span><span class="p">:</span>
+            <span class="n">version</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">version</span><span class="p">,</span> <span class="n">VERSION</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">VERSION</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+    <span class="kn">from</span> <span class="nn">django.utils.version</span> <span class="kn">import</span> <span class="n">get_svn_revision</span>
+    <span class="n">svn_rev</span> <span class="o">=</span> <span class="n">get_svn_revision</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">svn_rev</span> <span class="o">!=</span> <span class="s">u&#39;SVN-unknown&#39;</span><span class="p">:</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">version</span><span class="p">,</span> <span class="n">svn_rev</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">version</span>
+</pre></div>
+</td></tr></table></div>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -147,6 +225,7 @@
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
+		<a href="index.html" accesskey="U">Application Construction</a><img src="../_static/triangle_closed.png" height="9" width="9" alt="&gt;">
 		Version Reporting
 		</ul>
 	</div>

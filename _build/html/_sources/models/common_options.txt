@@ -1,6 +1,8 @@
 ==========================================
 Configurable Options for Common Situations
 ==========================================
+.. warning::
+   This is just a stub document. It will be fleshed out more. Please don't comment on it.
 
 A few, well-known of variations
 (e.g. Use django.contrib.sites?)

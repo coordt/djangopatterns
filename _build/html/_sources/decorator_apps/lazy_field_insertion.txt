@@ -2,6 +2,10 @@
 Lazy Field Insertion
 ====================
 
+.. warning::
+   This is just a stub document. It will be fleshed out more. Please don't comment on it.
+
+
 The idea is allow developers to decide which models will have categories in the project’s settings.py, using a dictionary with the model as the key and the field or fields as the value.
 
 

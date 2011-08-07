@@ -46,20 +46,20 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1 cn" id="1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
-<li class="toctree-l1 cn" id="2"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
-<li class="toctree-l1 cn" id="3"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
-<li class="toctree-l1 current cn" id="4"><a class="reference internal" href="index.html">Model Patterns</a><ul class="current">
-<li class="toctree-l2 current cn" id="5"><a class="current reference internal" href="">Abstract Model Mixins</a></li>
-<li class="toctree-l2 cn" id="6"><a class="reference internal" href="common_options.html">Configurable Options for Common Situations</a></li>
-<li class="toctree-l2 cn" id="7"><a class="reference internal" href="configurable_relations.html">Configurable Foreign Keys</a></li>
-<li class="toctree-l2 cn" id="8"><a class="reference internal" href="flexible_storage_uploaded_files.html">Flexible storage of uploaded files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../what_are_pluggable_apps.html">What are pluggable apps?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_philosophy.html">My Development Assumptions and Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Model Patterns</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Abstract Model Mixins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_options.html">Configurable Options for Common Situations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configurable_relations.html">Configurable Foreign Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flexible_storage_uploaded_files.html">Flexible storage of uploaded files</a></li>
 </ul>
 </li>
-<li class="toctree-l1 cn" id="9"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
-<li class="toctree-l1 cn" id="10"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
-<li class="toctree-l1 cn" id="11"><a class="reference internal" href="../decorator_apps/index.html">Decorator App Patterns</a></li>
-<li class="toctree-l1 cn" id="12"><a class="reference internal" href="../app_construction/index.html">Application Construction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../templates/index.html">Template Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../urls/index.html">URL patterns</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -91,9 +91,13 @@
             
   <div class="section" id="abstract-model-mixins">
 <h1>Abstract Model Mixins<a class="headerlink" href="#abstract-model-mixins" title="Permalink to this headline">¶</a></h1>
-<p class="cn" id="1">GLAMKit (Gallery, Library, Archive, Museum) an Australian group, tackles this situation with a set of abstract classes that provide very basic features.</p>
-<p class="cn" id="2">You create your model by subclassing the classes that provide the functionality you need.</p>
-<p class="cn" id="3">And you don’t have to stop there. You can add your own fields as well.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<a name="3d2596e43a4b71ac1d465480d9060f186867b859"></a><p class="last cn" id="3d2596e43a4b71ac1d465480d9060f186867b859">This is just a stub document. It will be fleshed out more. Please don&#8217;t comment on it.</p>
+</div>
+<a name="ff5535626ede22e73c653551f6cb3b3a9e38cd7c"></a><p class="cn" id="ff5535626ede22e73c653551f6cb3b3a9e38cd7c">GLAMKit (Gallery, Library, Archive, Museum) an Australian group, tackles this situation with a set of abstract classes that provide very basic features.</p>
+<a name="23ab591d5fa404e0bbd40d0b7df0c9fdd4f4c7f4"></a><p class="cn" id="23ab591d5fa404e0bbd40d0b7df0c9fdd4f4c7f4">You create your model by subclassing the classes that provide the functionality you need.</p>
+<a name="90c8e668eb5e7f2672e8dedd6f43aa60831939c0"></a><p class="cn" id="90c8e668eb5e7f2672e8dedd6f43aa60831939c0">And you don’t have to stop there. You can add your own fields as well.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PRBlog</span><span class="p">(</span><span class="n">EntryBase</span><span class="p">,</span>
              <span class="n">StatusableEntryMixin</span><span class="p">):</span>
 
