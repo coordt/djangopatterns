@@ -1,10 +1,8 @@
+:Author: Corey Oordt
+
 =================
 Version Reporting
 =================
-
-:Author:
-	Corey Oordt
-
 
 What problem does this pattern solve?
 =====================================

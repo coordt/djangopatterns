@@ -1,3 +1,5 @@
+:nocomments:
+
 ==================
 Views as a package
 ==================
