@@ -1,3 +1,5 @@
+:Author: Corey Oordt
+
 =========================
 Configurable Applications
 =========================
@@ -79,6 +81,25 @@ It creates a standard set of configurations in line 13, and then uses the dictio
 Settings with nested dictionaries
 ---------------------------------
 
+If your settings dictionary has a dictionary as a value, you need to take a slightly different approach. ``dict.update()`` will completely overwrite the nested dictionaries, not merge them. To make things trickier, ``dict.update()`` doesn't return a value, so
+
+.. code-block:: python
+
+	DEFAULT_SETTINGS.update(getattr(settings, 'FOOBAR_SETTINGS', {}))
+	DEFAULT_SETTINGS['FOO'] = DEFAULT_FOO.update(DEFAULT_SETTINGS.get('FOO', {}))
+
+leaves ``DEFAULT_SETTINGS['FOO']`` with a value of ``None``\ . So lets try something else.
+
+**supertagging/settings.py**
+	.. literalinclude:: configure_app4.py
+	   :linenos:
+
+
+In this example taken from django-supertagging, line 8 shows the default values for ``SUPERTAGGING_SETTINGS['MARKUP']``\ . Line 16 retrieves the ``SUPERTAGGING_SETTINGS`` dictionary into a temporary variable using ``getattr``\ .
+
+Line 17 merges the ``DEFAULT_SETTINGS`` dictionary with the dictionary retrieved in line 16 into a new copy. By converting each dictionary into a list of tuple-pairs with the ``items()`` method, it can combine them using the ``+`` operator. When this list is converted back into a dictionary, it uses the last found key-value pair.
+
+Lines 18-20 merge the defaults for ``MARKUP`` with whatever the user has specified.
 
 Turning the keys into attributes
 --------------------------------

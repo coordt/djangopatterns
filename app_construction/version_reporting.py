@@ -6,12 +6,12 @@ __version_info__ = {
     'serial': 1
 }
 
-def get_version():
+def get_version(short=False):
     vers = ["%(major)i.%(minor)i" % __version_info__, ]
     
     if __version_info__['micro']:
         vers.append(".%(micro)i" % __version_info__)
-    if __version_info__['releaselevel'] != 'final':
+    if __version_info__['releaselevel'] != 'final' and not short:
         vers.append('%(releaselevel)s%(serial)i' % __version_info__)
     return ''.join(vers)
 

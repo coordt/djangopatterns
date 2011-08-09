@@ -9,7 +9,7 @@ It’s bad practice to hard code url paths or assume certain paths, for example 
 
 Django provides an easy way to abstractly reference a url and its view. All you have to do ...
 
-Is add a *** url function in front of the pattern *** and add a name parameter. This allows you to ...
+Is add a url function in front of the pattern and add a name parameter. This allows you to ...
 
 ::
 
@@ -25,7 +25,7 @@ Is add a *** url function in front of the pattern *** and add a name parameter. 
 	<p>Go to the <a href="{% url coolapp_index %}">Index</a></p>
 
 
-Retrieve the url using the url template tag *** or use the reverse function within your code.
+Retrieve the url using the url template tag or use the reverse function within your code.
 
 
 ::

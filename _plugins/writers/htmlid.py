@@ -19,7 +19,7 @@ class HTMLIdTranslator(SmartyPantsHTMLTranslator):
         if self.should_be_compact_paragraph(node):
             self.context.append('')
         else:
-            self.body.append('<a name="%s"></a>' % id_name)
+            #self.body.append('<a name="%s"></a>' % id_name)
             self.body.append(self.starttag(node, 'p', '', CLASS='cn'))
             self.context.append('</p>\n')
     

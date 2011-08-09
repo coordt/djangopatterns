@@ -104,7 +104,7 @@ html_theme = 'default'
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
 
-html_translator_class = 'writers.htmlid.HTMLIdTranslator'
+#html_translator_class = 'writers.htmlid.HTMLIdTranslator'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -161,6 +161,8 @@ html_show_sourcelink = False
 
 # If nonempty, this is the file name suffix for HTML files (e.g. ".xhtml").
 #html_file_suffix = ''
+
+html_compact_lists = True
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'djangopatternsdoc'

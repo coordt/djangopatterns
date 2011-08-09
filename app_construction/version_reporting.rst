@@ -4,6 +4,8 @@
 Version Reporting
 =================
 
+**Contributors:** Corey Oordt
+
 What problem does this pattern solve?
 =====================================
 
@@ -24,8 +26,8 @@ Why should I use it?
 3. It is easy for others to test the version of your code to better handle backwards-compatibility.
 
 
-How to use it
-=============
+Implementation
+==============
 
 `PEP 386 <http://www.python.org/dev/peps/pep-0386/#the-new-versioning-algorithm>`_ defines the standard way to specify versions within the Python community. The most common scenario is the ``Major.Minor.Micro`` with a possible ``alpha/beta/release candidate`` suffix.
 
@@ -58,4 +60,27 @@ This sets up a ``__version_info__`` dictionary to hold the version fields, a ``g
 
 **django/__init__.py**
 	.. literalinclude:: version_reporting_django.py
+	   :linenos:
+
+
+How to use it
+=============
+
+Inside your setup.py file
+-------------------------
+
+The ``setup.py`` file needs a version for your application and you can import it directly from your application, ass seen in this example taken from `django-app-skeleton <https://github.com/callowayproject/django-app-skeleton>`_\ 's ``setup.py`` file:
+
+**django-app-skeleton/skel/setup.py**
+	.. literalinclude:: version_reporting_appskel.py
+	   :linenos:
+
+
+Inside your Sphinx documentation's conf.py
+------------------------------------------
+
+Sphinx also likes to have the version of your application in the formatted documentation. Since the ``conf.py`` configuration file is just Python, you can import your version.
+
+**coolapp/docs/conf.py**
+	.. literalinclude:: version_reporting_sphinx.py
 	   :linenos:
