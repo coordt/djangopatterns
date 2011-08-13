@@ -3,7 +3,7 @@ Change the admin widget of a field
 ==================================
 
 .. warning::
-   This is just a stub document. It will be fleshed out more. Please don't comment on it.
+   This is just a stub document. It will be fleshed out more. If you wish to comment on it, please e-mail coreyoordt at gmail.
 
 Django TinyMCE allows you to add TinyMCE functionality to your app if you make certain modifications to your app. This is great if it is your code. However, it doesn’t work so well, if it is someone else’s code. Justin forked Django-TinyMCE to provide this lazy customization.
 

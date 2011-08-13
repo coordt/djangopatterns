@@ -6,6 +6,10 @@ Version Reporting
 
 **Contributors:** Corey Oordt
 
+.. contents::
+   :local:
+
+
 What problem does this pattern solve?
 =====================================
 
@@ -52,9 +56,12 @@ Putting the version information in your application's ``__init__.py`` is a great
 
 Here is an example that I use:
 
+.. rst-class:: caption
+
 **coolapp/__index__.py**
-	.. literalinclude:: version_reporting.py
-	   :linenos:
+
+.. literalinclude:: version_reporting.py
+   :linenos:
 
 This sets up a ``__version_info__`` dictionary to hold the version fields, a ``get_version()`` function to format the ``__version_info__`` into a string, and ``__version__``\ , which is the formatted string version. It is similar to Django's method:
 
@@ -71,9 +78,12 @@ Inside your setup.py file
 
 The ``setup.py`` file needs a version for your application and you can import it directly from your application, ass seen in this example taken from `django-app-skeleton <https://github.com/callowayproject/django-app-skeleton>`_\ 's ``setup.py`` file:
 
+.. rst-class:: caption
+
 **django-app-skeleton/skel/setup.py**
-	.. literalinclude:: version_reporting_appskel.py
-	   :linenos:
+
+.. literalinclude:: version_reporting_appskel.py
+   :linenos:
 
 
 Inside your Sphinx documentation's conf.py
@@ -81,6 +91,9 @@ Inside your Sphinx documentation's conf.py
 
 Sphinx also likes to have the version of your application in the formatted documentation. Since the ``conf.py`` configuration file is just Python, you can import your version.
 
+.. rst-class:: caption
+
 **coolapp/docs/conf.py**
-	.. literalinclude:: version_reporting_sphinx.py
-	   :linenos:
+
+.. literalinclude:: version_reporting_sphinx.py
+   :linenos:

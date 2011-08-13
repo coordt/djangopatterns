@@ -3,7 +3,7 @@ URLs that live under any prefix
 ===============================
 
 .. warning::
-   This is just a stub document. It will be fleshed out more. Please don't comment on it.
+   This is just a stub document. It will be fleshed out more. If you wish to comment on it, please e-mail coreyoordt at gmail.
 
 It’s bad practice to hard code url paths or assume certain paths, for example that my blog app is always going to be under the path /blogs/
 
