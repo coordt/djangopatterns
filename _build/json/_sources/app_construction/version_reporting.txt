@@ -4,7 +4,7 @@
 Version Reporting
 =================
 
-**Contributors:** Corey Oordt
+**Contributors:** Corey Oordt, Stefan Foulis
 
 .. contents::
    :local:
@@ -54,7 +54,7 @@ When recording your version number you should:
 
 Putting the version information in your application's ``__init__.py`` is a great, out-of-the-way place.
 
-Here is an example that I use:
+Here is an example that conforms to PEP 386:
 
 .. rst-class:: caption
 
@@ -65,9 +65,12 @@ Here is an example that I use:
 
 This sets up a ``__version_info__`` dictionary to hold the version fields, a ``get_version()`` function to format the ``__version_info__`` into a string, and ``__version__``\ , which is the formatted string version. It is similar to Django's method:
 
+.. rst-class:: caption
+
 **django/__init__.py**
-	.. literalinclude:: version_reporting_django.py
-	   :linenos:
+
+.. literalinclude:: version_reporting_django.py
+   :linenos:
 
 
 How to use it
