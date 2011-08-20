@@ -6,6 +6,9 @@ Views as a package
 
 **Contributors:** Corey Oordt
 
+.. contents::
+   :local:
+
 What problem does this pattern solve?
 =====================================
 
