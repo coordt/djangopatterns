@@ -116,11 +116,14 @@
       {%- endif %}{% endif %}
       </div>
     <div class="footer">
-    <p>{%- if hasdoc('copyright') %}
-      {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
-    {%- else %}
-      {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
-    {%- endif %}
+    <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">
+            <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" />
+        </a>
+        This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">work</span> 
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://djangopatterns.com/" property="cc:attributionName" rel="cc:attributionURL">djangopatterns.com</a> 
+        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported License</a>.
+        Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://djangopatterns.com/" rel="dct:source">http://djangopattherns.com</a>.
     {%- if last_updated %}
       {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
     {%- endif %}
