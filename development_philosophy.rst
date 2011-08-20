@@ -15,6 +15,8 @@ The approach was internalized; each of us *knew* how it worked so it was never d
 Key Design Assumptions
 ======================
 
+.. _no-two-projects-are-alike:
+
 No two projects are alike.
 **************************
 

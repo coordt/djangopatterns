@@ -61,7 +61,7 @@ if the field is not in our list, we punt it back to the super class.
 	            db_field, **kwargs)
 
 
-
+œœ
 Finally, we put the two pieces together. At the bottom of admin.py we loop through the admin’s current admin registry. 
 
 Check if the current iteration is in our registry 

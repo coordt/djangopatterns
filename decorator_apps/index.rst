@@ -6,6 +6,7 @@ Decorator App Patterns
    :maxdepth: 2
    :glob:
    
+   introduction
    add_fieldsets_to_model_admin
    change_the_admin_widget
    lazy_field_insertion
