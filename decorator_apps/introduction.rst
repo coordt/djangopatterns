@@ -4,9 +4,6 @@ Introduction to decorator applications
 
 **Contributors:** Corey Oordt
 
-.. warning::
-   This is just a stub document. It will be fleshed out more.
-
 .. contents::
    :local:
 
