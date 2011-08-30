@@ -56,3 +56,9 @@ Decorators aren't just good for metadata; they can also alter how the data is ma
 If no two projects are alike, might that also include text formatting? In one project, the users might want a WYSIWYG editor, while others prefer a specific markup language. A decorator app can manage that for the data app, especially if the data app includes some hooks to make it easier.
 
 
+Warnings
+========
+
+Django doesn't have any native way to add functionality to other applications. Therefore accomplishing this task requires modifying class definitions at runtime. Depending on the amount and type of modification, there could be unforeseen consequences.
+
+All the patterns discussed are used in production and heavily tested. Each pattern does significant error checking to make sure any inserted code doesn't clobber existing functionality.
