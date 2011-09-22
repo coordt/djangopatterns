@@ -17,11 +17,11 @@ Flexible storage of uploaded files
 
 ::
 
-	from massmedia.settings import IMAGE_UPLOAD_TO, DEFAULT_STORAGE
+	from django.conf import settings
 
 	class Image(models.Model):
 	    file = models.FileField(
-	        upload_to = IMAGE_UPLOAD_TO,
+	        upload_to = settings.IMAGE_UPLOAD_TO,
 	        blank = True, 
 	        null = True,
-	        storage=DEFAULT_STORAGE())
+	        storage=settings.DEFAULT_STORAGE())
