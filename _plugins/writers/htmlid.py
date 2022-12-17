@@ -12,10 +12,10 @@ class HTMLIdTranslator(SmartyPantsHTMLTranslator):
     
     def visit_paragraph(self, node):
         self.id_counter += 1
-        hashname = u"%s%s%s" % (self.builder.current_docname, self.id_counter, node.astext())
+        hashname = f"{self.builder.current_docname}{self.id_counter}{node.astext()}"
         id_name = hashlib.sha1(hashname.encode('utf8')).hexdigest()
         node['ids'].append(id_name)
-        
+
         if self.should_be_compact_paragraph(node):
             self.context.append('')
         else:

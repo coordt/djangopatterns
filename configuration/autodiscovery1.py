@@ -5,7 +5,7 @@ def generic_autodiscover(module_name):
     """
     import imp
     from django.conf import settings
-    
+
     for app in settings.INSTALLED_APPS:
         try:
             import_module(app)
@@ -16,5 +16,5 @@ def generic_autodiscover(module_name):
             imp.find_module(module_name, app_path)
         except ImportError:
             continue
-        import_module('%s.%s' % (app, module_name))
-        app_path = sys.modules['%s.%s' % (app, module_name)]
+        import_module(f'{app}.{module_name}')
+        app_path = sys.modules[f'{app}.{module_name}']

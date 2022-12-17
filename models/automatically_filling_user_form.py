@@ -5,11 +5,7 @@ class EntryForm(forms.ModelForm):
         model = Entry
     
     def clean_author(self):
-        if not self.cleaned_data['author']:
-            return User()
-        return self.cleaned_data['author']
+        return self.cleaned_data['author'] or User()
     
     def clean_last_modified_by(self):
-        if not self.cleaned_data['last_modified_by']:
-            return User()
-        return self.cleaned_data['last_modified_by']
+        return self.cleaned_data['last_modified_by'] or User()

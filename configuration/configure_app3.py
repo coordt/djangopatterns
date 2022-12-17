@@ -12,9 +12,7 @@ class DebugToolbar(object):
         base_url = self.request.META.get('SCRIPT_NAME', '')
         self.config = {
             'INTERCEPT_REDIRECTS': True,
-            'MEDIA_URL': u'%s/__debug__/m/' % base_url
-        }
-        # Check if settings has a DEBUG_TOOLBAR_CONFIG and updated config
-        self.config.update(getattr(settings, 'DEBUG_TOOLBAR_CONFIG', {}))
+            'MEDIA_URL': f'{base_url}/__debug__/m/',
+        } | getattr(settings, 'DEBUG_TOOLBAR_CONFIG', {})
         
         # ... more code below
